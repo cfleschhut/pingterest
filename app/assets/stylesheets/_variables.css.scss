@@ -1,6 +1,10 @@
-$body-bg: #fff;
-$text-color: #2c3e50;
-$brand-primary: #1abc9c;
-$navbar-inverse-bg: #2c3e50;
-$navbar-inverse-link-color: #fff;
-$jumbotron-bg: #ecf0f1;
+$body-bg: hsl(0, 0%, 91%);
+
+$font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$text-color: hsl(0, 0%, 20%);
+$brand-primary: hsl(358, 73%, 46%);
+
+$navbar-default-bg: #fff;
+$navbar-default-brand-color: hsl(358, 73%, 46%);
+
+$jumbotron-bg: #fff;
