@@ -20,7 +20,9 @@
         </li>
         <li>
           <% if user_signed_in? %>
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= "Log out #{current_user.email}" %>
+            <% end %>
           <% else %>
             <%= link_to 'Sign in', new_user_session_path %>
           <% end %>
