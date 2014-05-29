@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
 
     <div class="navbar-header">
@@ -18,14 +18,20 @@
         <li>
           <%= link_to 'About', about_path %>
         </li>
-        <li>
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'New Pin', new_pin_path %>
+          </li>
+          <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <%= "Log out #{current_user.email}" %>
             <% end %>
-          <% else %>
+          </li>
+        <% else %>
+          <li>
             <%= link_to 'Sign in', new_user_session_path %>
-          <% end %>
+          </li>
+        <% end %>
         </li>
       </ul>
     </div>

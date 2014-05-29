@@ -1,40 +1,22 @@
-<h1>Listing pins</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td>
-          <%= image_tag pin.image.url(:thumb) %>
-        </td>
-        <td>
-          <%= pin.description %>
-        </td>
-        <td>
-          <%= pin.user.email %>
-        </td>
-        <td>
-          <%= link_to 'Show', pin %>
-          <% if pin.user == current_user %>
-            <%= link_to 'Edit', edit_pin_path(pin) %>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<% if user_signed_in? %>
-  <p>
-    <%= link_to 'New Pin', new_pin_path %>
-  </p>
-<% end %>
+<div id="pins" class="clearfix transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box col3">
+      <div>
+        <%= image_tag pin.image.url(:medium) %>
+      </div>
+      <h2>
+        <%= pin.description %>
+      </h2>
+      <div>
+        <%= pin.user.email %>
+      </div>
+      <div>
+        <%= link_to 'Show', pin %>
+        <% if pin.user == current_user %>
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
