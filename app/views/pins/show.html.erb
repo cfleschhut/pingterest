@@ -9,7 +9,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= image_tag @pin.image.url(:medium) %>
+    <%= image_tag @pin.image.url(:medium), class: 'center-block' %>
   </div>
   <div class="panel-body">
     <%= simple_format @pin.description %>
