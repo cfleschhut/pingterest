@@ -1,6 +1,15 @@
-<h1>Editing pin</h1>
+<ol class="breadcrumb">
+  <li>
+    <%= link_to 'Pins', pins_path %>
+  </li>
+  <li>
+    <%= link_to "Pin #{@pin.id}", @pin %>
+  </li>
+  <li class="active">
+    Edit
+  </li>
+</ol>
+
+<h1>Edit Pin</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>

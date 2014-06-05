@@ -12,18 +12,31 @@
     <%= image_tag @pin.image.url(:medium), class: 'center-block' %>
   </div>
   <div class="panel-body">
-    <%= simple_format @pin.description %>
+    <div class="pull-right">
+      <% if @pin.user == current_user %>
+        <p class="actions text-right">
+          <small>
+            <%= link_to edit_pin_path(@pin) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-remove"></span>
+              Delete
+            <% end %>
+          </small>
+        </p>
+      <% end %>
+    </div>
 
-    <p>
-      <strong>
-        <%= @pin.user.email %>
-      </strong>
-    </p>
+    <div class="pull-left">
+      <%= simple_format @pin.description %>
 
-    <% if @pin.user == current_user %>
-      <p class="actions">
-        <%= link_to 'Edit', edit_pin_path(@pin) %>
+      <p>
+        <strong>
+          <%= @pin.user.email %>
+        </strong>
       </p>
-    <% end %>
+    </div>
   </div>
 </div>

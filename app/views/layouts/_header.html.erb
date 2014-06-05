@@ -23,7 +23,10 @@
       </div>
       <div class="navbar-right">
         <div class="navbar-left">
-          <%= link_to 'New Pin', new_pin_path, class: 'btn btn-default navbar-btn' %>
+          <%= link_to new_pin_path, class: 'btn btn-default navbar-btn' do %>
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            New Pin
+          <% end %>
         </div>
         <div class="navbar-right">
           <ul class="nav navbar-nav">

@@ -6,19 +6,11 @@
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
         <%= simple_format pin.description %>
-
         <p>
           <strong>
             <%= pin.user.email %>
           </strong>
         </p>
-
-        <% if pin.user == current_user %>
-          <p class="actions">
-            <%= link_to 'Edit', edit_pin_path(pin) %>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
       </div>
     </div>
   <% end %>
