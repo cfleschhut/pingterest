@@ -1,14 +1,12 @@
-<% unless user_signed_in? %>
-  <div class="jumbotron">
-    <h1>
-      Welcome!
-    </h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-      <%= link_to 'Sign up here', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
-    </p>
-  </div>
-<% end %>
+<div class="jumbotron">
+  <h1>
+    Welcome!
+  </h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <p>
+    <%= link_to 'Sign up here', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+  </p>
+</div>
