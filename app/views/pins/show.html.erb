@@ -9,25 +9,29 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= image_tag @pin.image.url(:medium), class: 'center-block' %>
+    <%= image_tag @pin.image.url(:medium), class: 'center-block img-responsive' %>
   </div>
   <div class="panel-body">
-    <div class="pull-right">
-      <% if @pin.user == current_user %>
-        <p class="actions text-right">
-          <small>
-            <%= link_to edit_pin_path(@pin) do %>
+    <% if @pin.user == current_user %>
+      <ul class="actions list-inline pull-right">
+        <li>
+          <%= link_to edit_pin_path(@pin) do %>
+            <small>
               <span class="glyphicon glyphicon-edit"></span>
               Edit
-            <% end %>
-            <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-remove"></span>
+            </small>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <small>
+              <span class="glyphicon glyphicon-trash"></span>
               Delete
-            <% end %>
-          </small>
-        </p>
-      <% end %>
-    </div>
+            </small>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
 
     <div class="pull-left">
       <%= simple_format @pin.description %>
