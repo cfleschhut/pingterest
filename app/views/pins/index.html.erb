@@ -5,13 +5,12 @@
     <div class="box panel panel-default">
       <%= link_to image_tag(pin.image.url(:medium), class: 'img-responsive'), pin %>
       <div class="panel-body">
-        <%= simple_format pin.description %>
-
-        <div class="pinCredits">
-          <%= link_to users_path pin.user do %>
-            <%= pin.user.username %>
-          <% end %>
+        <div class="pinDescription">
+          <%= simple_format pin.description %>
         </div>
+        <%= link_to users_path(pin.user), class: 'pinCredits' do %>
+          <%= pin.user.username %>
+        <% end %>
       </div>
     </div>
   <% end %>
