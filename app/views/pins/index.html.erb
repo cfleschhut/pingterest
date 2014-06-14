@@ -6,11 +6,12 @@
       <%= link_to image_tag(pin.image.url(:medium), class: 'img-responsive'), pin %>
       <div class="panel-body">
         <%= simple_format pin.description %>
-        <p>
-          <strong>
+
+        <div class="pinCredits">
+          <%= link_to users_path pin.user do %>
             <%= pin.user.username %>
-          </strong>
-        </p>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

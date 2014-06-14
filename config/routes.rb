@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :pins
 
   devise_for :users
+  get 'users/:id' => 'users#show', as: :users
 
   root 'pins#index'
 

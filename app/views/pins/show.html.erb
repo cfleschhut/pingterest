@@ -40,7 +40,9 @@
         </div>
         <div class="media-body">
           <h4 class="media-heading">
-            <%= @pin.user.username %>
+            <%= link_to users_path @pin.user do %>
+              <%= @pin.user.username %>
+            <% end %>
             <small class="text-muted">
               &middot; <%= time_ago_in_words @pin.created_at %> ago
             </small>
