@@ -34,13 +34,20 @@
     <% end %>
 
     <div class="pull-left">
-      <%= simple_format @pin.description %>
-
-      <p>
-        <strong>
-          <%= @pin.user.username %>
-        </strong>
-      </p>
+      <div class="media">
+        <div class="pull-left">
+          <%= image_tag 'http://placehold.it/50x50', class: 'media-object' %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= @pin.user.username %>
+            <small class="text-muted">
+              &middot; <%= time_ago_in_words @pin.created_at %> ago
+            </small>
+          </h4>
+          <%= simple_format @pin.description %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
