@@ -1,9 +1,11 @@
 <%= form_for @pin, html: { multipart: true } do |f| %>
   <% if @pin.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:
-      </h2>
+    <div class="alert alert-danger" id="error_explanation">
+      <p>
+        <strong>
+          <%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:
+        </strong>
+      </p>
       <ul>
       <% @pin.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,11 +15,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :image, class: 'control-label' %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :description %><br>
+    <%= f.label :description, class: 'control-label' %>
     <%= f.text_field :description, class: 'form-control' %>
   </div>
   <div class="actions">
