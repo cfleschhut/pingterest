@@ -10,4 +10,12 @@ class Pin < ActiveRecord::Base
     size: { :less_than => 2.megabytes }
 
   validates :description, presence: true
+
+  def self.search(search)
+    if search
+      where('description LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end
