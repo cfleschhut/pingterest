@@ -16,6 +16,8 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
 gem 'masonry-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
