@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require bootstrap/transition
+//= require bootstrap/collapse
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded
 //= require_tree .
