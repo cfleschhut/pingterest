@@ -1,34 +1,17 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div id="pins" class="clearfix transitions-enabled">
-  <% if @pins.each do |pin| %>
-    <div class="box panel panel-default">
-      <%= link_to image_tag(pin.image.url(:medium), class: 'img-responsive', width: 300), pin %>
-      <div class="panel-body">
-        <div class="pinDescription">
-          <%= simple_format pin.description %>
-        </div>
-        <%= link_to users_path(pin.user), class: 'pinCredits' do %>
-          <%= pin.user.username %>
-        <% end %>
-      </div>
-    </div>
-  <% end.empty? %>
-    <% if user_signed_in? %>
-      <div class="text-center">
-        <h4>
-          No pins, yet. Create the first pin now!
-        </h4>
-        <p>
-          <%= link_to new_pin_path, class: 'btn btn-primary btn-sm' do %>
-            <span class="glyphicon glyphicon-plus-sign"></span>
-            New Pin
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<% if @search %>
+  <div class="well well-sm">
+    Search results for: <em class="text-muted"><%= @search %></em>
+  </div>
+  <div id="pins" class="clearfix transitions-enabled">
+    <%= render @pins %>
+  </div>
+<% else %>
+  <div id="pins" class="clearfix transitions-enabled">
+    <%= render @pins %>
+  </div>
+<% end %>
 
 <div class="pagination-centered">
   <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
